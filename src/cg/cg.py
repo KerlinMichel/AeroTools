@@ -53,6 +53,10 @@ from cmd import Cmd
 from os import path
 from glob import glob
 
+#Changes delims to allow file autocomplete
+import readline
+readline.set_completer_delims(' \t\n')
+
 def complete_path(filename):
     if path.isdir(filename):
         return glob(path.join(filename, '*'))
